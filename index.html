@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>绿意盎然社</title>
+    <style>
+      body {
+        margin: 0px;
+        overflow: hidden;
+        background-image: url(./img/2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+      /* 默认隐藏所有内容 */
+      section {
+        display: none;
+      }
+      /* 默认显示首页 */
+      #home {
+        display: block;
+      }
+      .any {
+        margin: 20px;
+      }
+      /* 导航栏样式 */
+      nav {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        border-radius: 20%;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav li {
+        display: inline;
+        margin-right: 20px;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      nav a:hover {
+        color: #007bff;
+      }
+      /* 标题样式 */
+      h1,
+      h2 {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="any">
+      <h1>绿意盎然社</h1>
+      <nav>
+        <ul id="navbar">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#knowledge">小常识</a></li>
+          <li><a href="#daily">日常剪影</a></li>
+          <li><a href="#affairs">团内事务</a></li>
+          <li><a href="#recruitment">招新入口</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <section id="home">
+        <h2>首页</h2>
+        <p>
+          欢迎来到绿意盎然社的官方网站！在这里，你可以了解到我们社团的最新动态、活动信息以及加入我们的条件。
+        </p>
+      </section>
+
+      <section id="knowledge">
+        <h2>小常识</h2>
+        <p>
+          这里收集了一些关于环保的小常识，包括垃圾分类、节能减排等，希望能帮助你更好地了解环保知识。
+        </p>
+      </section>
+
+      <section id="daily">
+        <h2>日常剪影</h2>
+        <p>
+          这里展示了我们社团成员的日常活动和经历，包括户外拓展、志愿者服务等，让我们一起感受绿意盎然的魅力吧！
+        </p>
+      </section>
+
+      <section id="affairs">
+        <h2>团内事务</h2>
+        <p>
+          这里介绍了我们社团的内部事务，包括组织结构、规章制度等，如果你对社团有兴趣，可以了解更多相关信息。
+        </p>
+      </section>
+
+      <section id="recruitment">
+        <h2>招新入口</h2>
+        <p>
+          如果你想加入我们的社团，可以通过这个入口提交你的申请，我们会尽快与你联系。期待你的加入！
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>联系我们</h2>
+        <p>
+          如果你有任何问题或建议，可以通过以下方式联系我们：电话：123456789，邮箱：example@example.com。感谢你的支持！
+        </p>
+      </section>
+    </div>
+    <script>
+      // 获取导航链接和内容区域
+      var navbarLinks = document.querySelectorAll("#navbar a");
+      var sections = document.querySelectorAll("section");
+
+      // 为每个导航链接添加点击事件监听器
+      navbarLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // 阻止默认行为
+          // 隐藏所有内容
+          sections.forEach(function (section) {
+            section.style.display = "none";
+          });
+          // 显示被点击的链接对应的内容
+          document.getElementById(
+            this.getAttribute("href").substring(1)
+          ).style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>
